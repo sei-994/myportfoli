@@ -1,29 +1,22 @@
 //共通化ソースコードの省略化
+
 export default {
   menuItems: [
     {
       name: "HOME",
-      url: "#",
+      url: "/",
     },
     {
       name: "ABOUT",
-      url: "#",
+      url: "/about",
     },
     {
       name: "WORK",
-      url: "#",
+      url: "/work",
     },
     {
       name: "SERVICE",
-      url: "#",
-    },
-    {
-      name: "BLOG",
-      url: "#",
-    },
-    {
-      name: "ACCESS",
-      url: "#",
+      url: "/service",
     },
   ],
 }

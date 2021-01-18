@@ -1,5 +1,8 @@
 <template>
   <v-main>
+    <section class="home">
+      <HomeHero />
+    </section>
     <v-parallax
       dark
       src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
@@ -15,9 +18,17 @@
 </template>
 
 <script>
+import HomeHero from "./HomeHero.vue"
 export default {
+  components: {
+    HomeHero,
+  },
   name: "Home",
 }
 </script>
 
-<style scss></style>
+<style lang="scss" scoped>
+.home {
+  padding-bottom: 50px;
+}
+</style>

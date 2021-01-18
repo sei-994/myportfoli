@@ -1,58 +1,37 @@
 <template>
   <v-app>
-    <!-- ここにヘッダーをコーディング -->
-    <header>
-      <v-app-bar app dark>
-        <!-- ここから追加 -->
-        <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
-        <!-- ここまで追加 -->
-        <v-toolbar-title>MyPortfolioSite</v-toolbar-title>
-      </v-app-bar>
-      <v-navigation-drawer v-model="drawer" fixed temporary>
-        <v-list nav dense>
-          <v-list-item-group>
-            <v-list-item>
-              <v-list-item-title>
-                Home
-              </v-list-item-title>
-            </v-list-item>
-            <v-list-item>
-              <v-list-item-title>
-                About
-              </v-list-item-title>
-            </v-list-item>
-            <v-list-item>
-              <v-list-item-title>
-                Work
-              </v-list-item-title>
-            </v-list-item>
-            <v-list-item>
-              <v-list-item-title>
-                Service
-              </v-list-item-title>
-            </v-list-item>
-          </v-list-item-group>
-        </v-list>
-      </v-navigation-drawer>
-    </header>
-    <Home></Home>
+    <!-- header -->
+    <AppHeader />
+    <!-- content -->
+    <v-content
+      ><!-- トップページのコンポーネントは必ずv-contentでくくる -->
+      <Home></Home>
+    </v-content>
+    <!-- footer -->
+    <AppFooter />
   </v-app>
 </template>
 
 <script>
+import AppHeader from "./components/AppHeader"
+import AppFooter from "./components/AppFooter"
 import Home from "./components/Home"
 
 export default {
   name: "App",
 
   components: {
+    AppHeader,
     Home,
-  },
-
-  data() {
-    return {
-      drawer: false,
-    }
+    AppFooter,
   },
 }
 </script>
+
+<style lang="scss" scoped>
+// tabs CSS修正
+.v-toolbar__title {
+  overflow: visible !important;
+  margin-right: 50px !important;
+}
+</style>
